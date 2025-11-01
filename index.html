@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Msendoo Children Academy</title>
+  <link rel="stylesheet" href="index.css">
+  <meta name="description"
+    content="Msendoo Children Academy — Nursery, Primary & Secondary. Quality, calm, and modern education." />
+</head>
+
+<body>
+
+  <!-- Header / Nav -->
+  <header role="banner">
+    <div class="nav-inner">
+      <div class="logo" aria-hidden="false" onclick="window.location.href='#home'" style="cursor:pointer">
+        <div class="mark" aria-hidden="true">M</div>
+        <div>
+          <div style="font-size:.95rem">Msendoo</div>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:2px">Children Academy</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <div class="links" id="desktop-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#academics">Academics</a>
+          <a href="#admission">Admission</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="cta" onclick="location.hash='#admission'">Enroll Now</button>
+
+        <!-- hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-drawer"
+          aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <strong style="color:var(--primary)">Menu</strong>
+        <button id="closeDrawer" aria-label="Close menu"
+          style="background:none;border:0;font-weight:700;cursor:pointer">Close</button>
+      </div>
+      <nav>
+        <a href="#home" class="drawer-link">Home</a>
+        <a href="#about" class="drawer-link">About</a>
+        <a href="#academics" class="drawer-link">Academics</a>
+        <a href="#admission" class="drawer-link">Admission</a>
+        <a href="#contact" class="drawer-link">Contact</a>
+        <hr style="margin:0.8rem 0;border:none;border-top:1px solid #eef4fb">
+        <a href="#login" class="drawer-link">Login Portal</a>
+        <button class="drawer-link" id="enroll-mobileView" onclick="window.location='#admission'">Enroll Now</button>
+        
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Welcome section">
+      <div class="hero-wrap fade-up" id="heroCard">
+        <div class="hero-card">
+          <div class="hero-left">
+            <h1>Building Bright Futures with Confidence &amp; Care</h1>
+            <p class="lead">Msendoo Children Academy blends academic excellence with character development — a calm,
+              nurturing place for Nursery, Primary and Secondary students.</p>
+            <div class="hero-actions">
+              <button class="cta"
+                onclick="document.querySelector('#admission').scrollIntoView({behavior:'smooth'})">Explore
+                Admissions</button>
+              <button class="btn-secondary"
+                onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">Learn About Us</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Msendoo</h2>
+      <div class="about-grid">
+        <div class="about-image fade-up" style="border-radius:12px;overflow:hidden">
+          <img src="./images/download (2).jpeg"
+            alt="Children reading together in classroom">
+        </div>
+        <div class="about-copy fade-up">
+          <p class="lead">
+            At Msendoo Children Academy, we cultivate curiosity and confidence. Our curriculum is designed to balance
+            rigorous academics with creative play and life skills.
+            We provide a safe, modern learning environment where each child is encouraged to discover their unique
+            strengths.
+          </p>
+          <p style="margin-top:1rem;color:var(--muted)">
+            Our teachers are experienced and caring. We focus on small class sizes, individual attention, and
+            partnerships with parents to ensure every child flourishes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMICS -->
+    <section id="academics" aria-labelledby="academics-heading">
+      <h2 id="academics-heading">Our Programs</h2>
+      <div class="cards">
+        <article class="card fade-up" aria-labelledby="n1">
+          <h3 id="n1">Nursery</h3>
+          <p>Play-based early learning to spark curiosity — sensory activities, storytelling, and gentle introduction to
+            numbers and letters.</p>
+        </article>
+        <article class="card fade-up" aria-labelledby="n2">
+          <h3 id="n2">Primary</h3>
+          <p>Solid foundation in literacy and numeracy, guided discovery, and activities that build confidence and
+            teamwork.</p>
+        </article>
+        <article class="card fade-up" aria-labelledby="n3">
+          <h3 id="n3">Secondary</h3>
+          <p>Academic rigor paired with leadership and technology exposure — preparing students for national exams and
+            global opportunities.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LOGIN PORTAL -->
+    <section id="login" aria-labelledby="login-heading">
+      <h2 id="login-heading">Login Portal</h2>
+      <p class="lead" style="margin-bottom:1rem">Access the school portal based on your role. (These cards are
+        placeholders for future authentication.)</p>
+      <div class="portal-grid">
+        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Principal login (placeholder)')" role="button"
+          aria-label="Principal login">
+          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Principal</div>
+          <small>Admin overview & announcements</small>
+        </a>
+
+        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Staff login (placeholder)')" role="button"
+          aria-label="Staff login">
+          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Staff</div>
+          <small>Attendance, class resources</small>
+        </a>
+
+        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Parents login (placeholder)')" role="button"
+          aria-label="Parents login">
+          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Parents</div>
+          <small>View reports & messages</small>
+        </a>
+
+        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Students login (placeholder)')" role="button"
+          aria-label="Students login">
+          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Students</div>
+          <small>Assignments & learning portal</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ADMISSION -->
+    <section id="admission" aria-labelledby="admission-heading">
+      <h2 id="admission-heading">Admissions</h2>
+      <p class="lead">Admission open for the 2025 academic session. Join Msendoo Children Academy to enjoy quality
+        teaching, safe facilities, and growth-focused programs.</p>
+      <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+        <button class="cta" id="apply-mobileView" onclick="alert('Thank you — we will contact you with next steps.')">Apply Now</button>
+        <button class="btn-secondary"
+          onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Contact Admissions</button>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" aria-labelledby="testi-heading">
+      <h2 id="testi-heading">What Parents Say</h2>
+      <div class="testi">
+        <div class="testi-card fade-up">
+          <strong>“Our daughter improved so much in reading.”</strong>
+          <p style="margin-top:.5rem;color:var(--muted)">— Mrs. A. Emmanuel</p>
+        </div>
+        <div class="testi-card fade-up">
+          <strong>“Warm staff and attentive teachers.”</strong>
+          <p style="margin-top:.5rem;color:var(--muted)">— Mr. J. Okoro</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div style="display:flex;flex-direction:column;gap:0.6rem;align-items:center;justify-content:center" id="contact">
+      <div><strong>Msendoo Children Academy</strong> — Along Gboko Road, Makurdi, Benue State</div>
+      <div style="color:#bcd3e6">✉️ info@msendooacademy.com | ☎️ +234 810 234 5678</div>
+      <div style="margin-top:.5rem">
+        <a href="#" aria-label="Facebook">Facebook</a> ·
+        <a href="#" aria-label="Instagram">Instagram</a> ·
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+      <div style="margin-top:.6rem;font-size:.9rem;color:#9fb0c7">© 2025 Msendoo Children Academy — Designed by
+        AYANGEALUMUN TERNA SABASTINE</div>
+    </div>
+  </footer>
+
+  <!-- ===== Scripts: Mobile Drawer, Drawer Links, In-view animation ===== -->
+   <script src="index.js"></script>
+</body>
+
+</html>
