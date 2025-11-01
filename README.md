@@ -44,8 +44,7 @@ It features a calm, elegant layout with smooth animations and a fully responsive
 
 ## 🚀 Live Demo
 
-🖥️ Coming soon on GitHub Pages or Netlify  
-*(Add your live link here when hosted)*
+https://ayangealumunterna.github.io/Msendoo-Children-Academy/
 
 ---
 
