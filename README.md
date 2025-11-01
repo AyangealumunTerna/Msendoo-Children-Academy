@@ -76,7 +76,8 @@ It features a calm, elegant layout with smooth animations and a fully responsive
 
 ## 🧡 Acknowledgment
 
-Special thanks to **Tech Bro** for mentorship and guidance during the creation of this project.
+Special thanks to Mr. UTOR BEMGBA, my mentor, for his guidance, encouragement, and for inspiring this project idea.
+And to Tech Bro, for the technical mentorship, sparring, and deep project refinement.
 
 ---
 
