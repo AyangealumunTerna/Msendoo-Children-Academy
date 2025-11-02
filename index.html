@@ -62,7 +62,7 @@
         <hr style="margin:0.8rem 0;border:none;border-top:1px solid #eef4fb">
         <a href="#login" class="drawer-link">Login Portal</a>
         <button class="drawer-link" id="enroll-mobileView" onclick="window.location='#admission'">Enroll Now</button>
-        
+
       </nav>
     </div>
   </div>
@@ -93,8 +93,7 @@
       <h2 id="about-heading">About Msendoo</h2>
       <div class="about-grid">
         <div class="about-image fade-up" style="border-radius:12px;overflow:hidden">
-          <img src="./images/download (2).jpeg"
-            alt="Children reading together in classroom">
+          <img src="./images/download (2).jpeg" alt="Children reading together in classroom">
         </div>
         <div class="about-copy fade-up">
           <p class="lead">
@@ -134,49 +133,61 @@
     </section>
 
     <!-- LOGIN PORTAL -->
-    <section id="login" aria-labelledby="login-heading">
-      <h2 id="login-heading">Login Portal</h2>
-      <p class="lead" style="margin-bottom:1rem">Access the school portal based on your role. (These cards are
-        placeholders for future authentication.)</p>
+    <section id="login" aria-labelledby="login-heading" class="login-section">
+      <h2 id="login-heading">Portal Access</h2>
+      <p class="lead">Choose your role to log in or register for access to the academy system.</p>
+
       <div class="portal-grid">
-        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Principal login (placeholder)')" role="button"
-          aria-label="Principal login">
-          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Principal</div>
-          <small>Admin overview & announcements</small>
-        </a>
+        <div class="portal-card" data-role="Principal">
+          <h3>Principal</h3>
+          <p>Admin overview & announcements</p>
+          <div class="actions">
+            <button onclick="openModal('login', 'Principal')">Login</button>
+            <button onclick="openModal('register', 'Principal')">Register</button>
+          </div>
+        </div>
 
-        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Staff login (placeholder)')" role="button"
-          aria-label="Staff login">
-          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Staff</div>
-          <small>Attendance, class resources</small>
-        </a>
+        <div class="portal-card" data-role="Staff">
+          <h3>Staff</h3>
+          <p>Attendance, class resources</p>
+          <div class="actions">
+            <button onclick="openModal('login', 'Staff')">Login</button>
+            <button onclick="openModal('register', 'Staff')">Register</button>
+          </div>
+        </div>
 
-        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Parents login (placeholder)')" role="button"
-          aria-label="Parents login">
-          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Parents</div>
-          <small>View reports & messages</small>
-        </a>
+        <div class="portal-card" data-role="Parents">
+          <h3>Parents</h3>
+          <p>View reports & messages</p>
+          <div class="actions">
+            <button onclick="openModal('login', 'Parents')">Login</button>
+            <button onclick="openModal('register', 'Parents')">Register</button>
+          </div>
+        </div>
 
-        <a class="portal fade-up" href="#" onclick="alert('Redirecting to Students login (placeholder)')" role="button"
-          aria-label="Students login">
-          <div style="font-size:1.1rem;font-weight:800;color:#0e3b54">Students</div>
-          <small>Assignments & learning portal</small>
-        </a>
+        <div class="portal-card" data-role="Students">
+          <h3>Students</h3>
+          <p>Assignments & learning portal</p>
+          <div class="actions">
+            <button onclick="openModal('login', 'Students')">Login</button>
+            <button onclick="openModal('register', 'Students')">Register</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ADMISSION -->
-    <section id="admission" aria-labelledby="admission-heading">
-      <h2 id="admission-heading">Admissions</h2>
-      <p class="lead">Admission open for the 2025 academic session. Join Msendoo Children Academy to enjoy quality
-        teaching, safe facilities, and growth-focused programs.</p>
-      <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap">
-        <button class="cta" id="apply-mobileView" onclick="alert('Thank you — we will contact you with next steps.')">Apply Now</button>
-        <button class="btn-secondary"
-          onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Contact Admissions</button>
+    <!-- Modal -->
+    <div class="modal" id="authModal">
+      <div class="modal-content fade-up">
+        <button class="close-btn" onclick="closeModal()">×</button>
+        <h3 id="modal-title">Login</h3>
+        <form id="authForm">
+          <input type="text" id="username" placeholder="Username" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit" class="primary-btn">Continue</button>
+        </form>
       </div>
-    </section>
-
+    </div>
     <!-- TESTIMONIALS -->
     <section id="testimonials" aria-labelledby="testi-heading">
       <h2 id="testi-heading">What Parents Say</h2>
@@ -209,7 +220,7 @@
   </footer>
 
   <!-- ===== Scripts: Mobile Drawer, Drawer Links, In-view animation ===== -->
-   <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 
 

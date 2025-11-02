@@ -46,6 +46,24 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+function openModal(type, role) {
+  const modal = document.getElementById("authModal");
+  const title = document.getElementById("modal-title");
+  modal.classList.add("show");
+  title.textContent = `${type === 'login' ? 'Login' : 'Register'} as ${role}`;
+
+  const form = document.getElementById("authForm");
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    alert(`${type === 'login' ? 'Logging in' : 'Registering'} as ${role}...`);
+    closeModal();
+  };
+}
+
+function closeModal() {
+  document.getElementById("authModal").classList.remove("show");
+}
+
 // // Accessibility: close drawer on ESC
 // document.addEventListener('keydown', (ev) => {
 //     if (ev.key === 'Escape') closeDrawer();
