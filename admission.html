@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission Form | Msendoo Children Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9fafb;
+      color: #0e3b54;
+      padding: 2rem;
+    }
+
+    .admission-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0e3b54;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 90%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #0e3b54;
+      color: white;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 60%;
+      margin: auto;
+    }
+
+    button:hover {
+      background-color: #146b8c;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="admission-container" target=" _blank">
+    <h1>Admission Form</h1>
+    <p style="text-align:center;margin-bottom:1rem;">Please fill out the form below to begin your child’s enrollment
+      process.</p>
+    <form id="admissionForm">
+      <div>
+        <label for="studentName">Student’s Full Name</label>
+        <input type="text" id="studentName" name="studentName" required />
+      </div>
+
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+
+      <div>
+        <label for="class">Class Applying For</label>
+        <select id="class" name="class" required>
+          <option value="">Select Class</option>
+          <option value="Nursery">Nursery</option>
+          <option value="Basic 1">Basic 1</option>
+          <option value="Basic 2">Basic 2</option>
+          <option value="Basic 3">Basic 3</option>
+          <option value="Basic 4">Basic 4</option>
+          <option value="Basic 5">Basic 5</option>
+          <option value="Basic 6">Basic 6</option>
+          <option value="Basic 7">Basic 7</option>
+          <option value="Basic 8">Basic 8</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="parentName">Parent/Guardian’s Name</label>
+        <input type="text" id="parentName" name="parentName" required />
+      </div>
+
+      <div>
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" required />
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <div>
+        <label for="address">Residential Address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content fade-up">
+      <h3>🎉 Application Submitted!</h3>
+      <p>Thank you for applying to <strong>Msendoo Children Academy</strong>. We’ll contact you shortly.</p>
+      <button onclick="closeModal()" class="btn">Close</button>
+    </div>
+  </div>
+
+  <script>
+
+    const form = document.getElementById("admissionForm");
+    const modal = document.getElementById("successModal");
+
+    document.getElementById('admissionForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // alert('Your admission application has been submitted successfully!');
+      this.reset();
+    });
+
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Prevent page reload
+      modal.style.display = "flex"; // Show modal
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+  </script>
+</body>
+
+</html>
