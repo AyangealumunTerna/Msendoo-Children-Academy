@@ -2,6 +2,7 @@
 const drawer = document.getElementById('drawer');
 const hamburger = document.getElementById('hamburger');
 const closeBtn = document.getElementById('closeDrawer');
+const admissionPage = document.querySelector('[data-itemid="admission"]');
 
 function openDrawer() {
     drawer.classList.add('open');
@@ -152,3 +153,8 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
   alert("Registering... (backend coming soon 😎)");
   closeModal("registerModal");
 });
+
+// // Admission page link
+// admissionPage.addEventListener(onclick, ()=>{
+//   window.open('admission.html', '_blank');
+// });

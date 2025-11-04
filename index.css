@@ -417,9 +417,9 @@ footer a {
   .hamburger {
     display: block;
   }
-  /* .cta {
+  #cta {
     display: none;
-  } */
+  }
   #apply-mobileView {
     display: block;
   }

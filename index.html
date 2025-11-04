@@ -32,7 +32,7 @@
           <a href="#contact">Contact</a>
           <a style="cursor: pointer;" onclick="openModal('loginModal')">Login Portal</a>
         </div>
-        <button class="cta" onclick="location.href='admission.html'">Enroll Now</button>
+        <button id="cta" data-itemid="admission" class="cta" onclick="window.open('admission.html', '_blank')">Enroll Now</button>
 
         <!-- hamburger -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-drawer"
@@ -61,7 +61,7 @@
         <a href="#contact" class="drawer-link">Contact</a>
         <hr style="margin:0.8rem 0;border:none;border-top:1px solid #eef4fb">
         <a style="cursor: pointer;" class="drawer-link" onclick="openModal('loginModal')">Login Portal</a>
-        <button class="drawer-link" id="enroll-mobileView" onclick="window.location='admission.html'">Enroll
+        <button class="drawer-link" id="enroll-mobileView" onclick="window.open('admission.html', '_blank')" data-itemid="admission">Enroll
           Now</button>
 
       </nav>
@@ -78,7 +78,7 @@
             <p class="lead">Msendoo Children Academy blends academic excellence with character development — a calm,
               nurturing place for Nursery, Primary and Secondary students.</p>
             <div class="hero-actions">
-              <button class="cta" onclick="window.location='admission.html'">Enroll Now</button>
+              <button class="cta" onclick="window.open('admission.html', '_blank')" data-itemid="admission">Enroll Now</button>
               <button class="btn-secondary"
                 onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">Learn About Us</button>
             </div>
@@ -131,7 +131,7 @@
         <!-- <button class="cta" onclick="location.href='admission.html'">Enroll Now</button> -->
 
       </div>
-      <button class="cta" onclick="window.location='admission.html'" style="margin-top: 1rem; ">Enroll Now</button>
+      <button class="cta" onclick="window.open('admission.html', '_blank')" style="margin-top: 1rem; " data-itemid="admission">Enroll Now</button>
     </section>
 
     <!-- Login Modal -->
