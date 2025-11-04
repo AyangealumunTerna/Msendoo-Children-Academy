@@ -280,73 +280,13 @@ section h2 {
   font-size: 0.98rem;
 }
 
-/* Login portal */
-/* Section layout */
-.login-section {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: #f9fafb;
+input{
+  border-radius: 15px;
+  width: 80%;
+  height: 2rem;
+  margin: 2px;
+  padding: 5%;
 }
-
-.login-section h2 {
-  color: #0e3b54;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.login-section .lead {
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* Cards */
-.portal-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  justify-items: center;
-}
-
-.portal-card {
-  background: #fff;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portal-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-}
-
-.portal-card h3 {
-  color: #0e3b54;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.portal-card p {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0.5rem 0 1rem;
-}
-
-.actions button {
-  background: #0e3b54;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  margin: 0 0.3rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.actions button:hover {
-  background: #14597a;
-}
-
 /* Modal */
 .modal {
   position: fixed;
@@ -477,9 +417,9 @@ footer a {
   .hamburger {
     display: block;
   }
-  .cta {
+  /* .cta {
     display: none;
-  }
+  } */
   #apply-mobileView {
     display: block;
   }

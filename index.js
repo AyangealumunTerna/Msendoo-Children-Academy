@@ -68,14 +68,6 @@ function closeModal() {
 // LocalStorage Auth Simulation
 // ===============================
 
-// Save or retrieve users
-function getUsers() {
-  return JSON.parse(localStorage.getItem("users")) || [];
-}
-function saveUsers(users) {
-  localStorage.setItem("users", JSON.stringify(users));
-}
-
 // Extend your openModal function behavior
 function openModal(type, role) {
   const modal = document.getElementById("authModal");
@@ -134,3 +126,29 @@ function openModal(type, role) {
 // document.addEventListener('keydown', (ev) => {
 //     if (ev.key === 'Escape') closeDrawer();
 // });
+
+// === AUTH MODALS ===
+function openModal(id) {
+  document.getElementById(id).classList.add("show");
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove("show");
+}
+function switchModal(current, next) {
+  closeModal(current);
+  openModal(next);
+}
+
+// Login form behavior
+document.getElementById("loginForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Logging in... (backend coming soon 😎)");
+  closeModal("loginModal");
+});
+
+// Register form behavior
+document.getElementById("registerForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Registering... (backend coming soon 😎)");
+  closeModal("registerModal");
+});
