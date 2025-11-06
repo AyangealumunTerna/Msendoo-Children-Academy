@@ -1,3 +1,4 @@
+import mysql from 'mysql2';
 const express = require('express');
 const mysql = require('mysql2');
 const bcrypt = require('bcryptjs');
@@ -9,15 +10,13 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-const db = mysql.createConnection(
-  process.env.MYSQL_URL
-);
+const db = mysql.createConnection(process.env.DATABASE_URL);
 
 db.connect(err => {
   if (err) {
     console.error('❌ Database connection failed:', err);
   } else {
-    console.log('✅ MySQL Connected');
+    console.log('✅ Connected to MySQL database');
   }
 });
 
