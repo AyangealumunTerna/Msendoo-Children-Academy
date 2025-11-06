@@ -2,7 +2,6 @@
 const drawer = document.getElementById('drawer');
 const hamburger = document.getElementById('hamburger');
 const closeBtn = document.getElementById('closeDrawer');
-const admissionPage = document.querySelector('[data-itemid="admission"]');
 
 function openDrawer() {
     drawer.classList.add('open');
@@ -47,81 +46,62 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-function openModal(type, role) {
-  const modal = document.getElementById("authModal");
-  const title = document.getElementById("modal-title");
-  modal.classList.add("show");
-  title.textContent = `${type === 'login' ? 'Login' : 'Register'} as ${role}`;
+// ==================== REGISTER ====================
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-  const form = document.getElementById("authForm");
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    alert(`${type === 'login' ? 'Logging in' : 'Registering'} as ${role}...`);
-    closeModal();
-  };
-}
+  const email = document.getElementById('registerEmail').value.trim();
+  const password = document.getElementById('registerPassword').value.trim();
+  const confirm = document.getElementById('registerConfirm').value.trim();
 
-function closeModal() {
-  document.getElementById("authModal").classList.remove("show");
-}
+  if (password !== confirm) {
+    alert("Passwords do not match!");
+    return;
+  }
 
-// ===============================
-// LocalStorage Auth Simulation
-// ===============================
+  try {
+    const res = await fetch('msendoo-children-academy-production.up.railway.app/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: email, password })
+    });
 
-// Extend your openModal function behavior
-function openModal(type, role) {
-  const modal = document.getElementById("authModal");
-  const title = document.getElementById("modal-title");
-  modal.classList.add("show");
-  title.textContent = `${type === "login" ? "Login" : "Register"} as ${role}`;
+    const data = await res.json();
+    alert(data.message);
+  } catch (err) {
+    console.error(err);
+    alert("Error connecting to server.");
+  }
+});
 
-  const form = document.getElementById("authForm");
-  form.innerHTML = `
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
-    ${
-      type === "register"
-        ? '<input type="password" id="confirmPassword" placeholder="Confirm Password" required />'
-        : ""
+
+// ==================== LOGIN ====================
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value.trim();
+
+  try {
+    const res = await fetch('msendoo-children-academy-production.up.railway.app/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: email, password })
+    });
+
+    const data = await res.json();
+    alert(data.message);
+
+    if (res.ok && data.token) {
+      localStorage.setItem('token', data.token);
+      // Redirect to dashboard page (if you have one)
+      window.location.href = 'dashboard.html';
     }
-    <button type="submit" class="primary-btn">
-      ${type === "login" ? "Login" : "Register"}
-    </button>
-  `;
-
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    if (type === "register") {
-      const confirmPassword = document.getElementById("confirmPassword").value.trim();
-      if (password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
-      }
-      const users = getUsers();
-      if (users.some((u) => u.email === email)) {
-        alert("User already exists. Please login instead.");
-        return;
-      }
-      users.push({ email, password, role });
-      saveUsers(users);
-      alert(`Registered successfully as ${role}!`);
-      closeModal();
-    } else {
-      const users = getUsers();
-      const user = users.find((u) => u.email === email && u.password === password && u.role === role);
-      if (!user) {
-        alert("Invalid credentials or role mismatch!");
-        return;
-      }
-      alert(`Welcome back, ${role}!`);
-      closeModal();
-    }
-  };
-}
+  } catch (err) {
+    console.error(err);
+    alert("Error connecting to server.");
+  }
+});
 
 // // Accessibility: close drawer on ESC
 // document.addEventListener('keydown', (ev) => {
@@ -140,21 +120,18 @@ function switchModal(current, next) {
   openModal(next);
 }
 
-// Login form behavior
-document.getElementById("loginForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Logging in... (backend coming soon 😎)");
-  closeModal("loginModal");
-});
-
-// Register form behavior
-document.getElementById("registerForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Registering... (backend coming soon 😎)");
-  closeModal("registerModal");
-});
-
-// // Admission page link
-// admissionPage.addEventListener(onclick, ()=>{
-//   window.open('admission.html', '_blank');
+// // Login form behavior
+// document.getElementById("loginForm").addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   alert("Logging in... (backend coming soon 😎)");
+//   closeModal("loginModal");
 // });
+
+// // Register form behavior
+// document.getElementById("registerForm").addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   alert("Registering... (backend coming soon 😎)");
+//   closeModal("registerModal");
+// });
+
+
