@@ -60,7 +60,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
   }
 
   try {
-    const res = await fetch('msendoo-children-academy-production.up.railway.app/register', {
+    const res = await fetch('https://msendoo-children-academy-production.up.railway.app/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: email, password })
@@ -83,7 +83,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   const password = document.getElementById('loginPassword').value.trim();
 
   try {
-    const res = await fetch('http://msendoo-children-academy-production.up.railway.app/login', {
+    const res = await fetch('https://msendoo-children-academy-production.up.railway.app/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: email, password })
