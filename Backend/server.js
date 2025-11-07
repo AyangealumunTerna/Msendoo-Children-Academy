@@ -12,6 +12,15 @@ app.use(express.json());
 // Database connection
 const db = mysql.createPool(process.env.DATABASE_URL);
 
+// Test DB connection at startup
+(async () => {
+  try {
+    await db.query('SELECT 1');
+    console.log('✅ Connected to MySQL database');
+  } catch (err) {
+    console.error('❌ Database connection failed:', err);
+  }
+})();
 
 // Secret key for JWT
 const JWT_SECRET = process.env.JWT_SECRET; // you can later move this to .env
