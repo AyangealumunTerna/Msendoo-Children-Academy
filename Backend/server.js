@@ -1,4 +1,4 @@
-import mysql from 'mysql2';
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const bcrypt = require('bcryptjs');
@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-const db = mysql.createConnection(process.env.DATABASE_URL);
+const db = mysql.createConnection(process.env.MYSQL_URL);
 
 db.connect(err => {
   if (err) {
