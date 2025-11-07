@@ -2,10 +2,10 @@
   "name": "msendoo-children-academy",
   "version": "1.0.0",
   "description": "> *Creative. Responsive. Elegant — A digital home for young minds to shine.*",
-  "main": "server.js",
+  "main": "Backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node Backend/server.js"
   },
   "repository": {
     "type": "git",
