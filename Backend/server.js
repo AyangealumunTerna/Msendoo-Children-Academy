@@ -10,7 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-const db = mysql.createPool(process.env.DATABASE_URL);
+const mysqlPromise = require('mysql2/promise');
+const db = mysqlPromise.createPool(process.env.DATABASE_URL);
 
 // Test DB connection at startup
 (async () => {
