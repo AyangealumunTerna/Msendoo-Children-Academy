@@ -157,7 +157,7 @@ async function connectDB() {
   user: 'root',
   password: 'UCswshGlwaLQkZyLwhlMisEBNqPNZHSL',
   database: 'railway',
-  port: 48569,
+  port: 8080,
 });
 
     } else {
