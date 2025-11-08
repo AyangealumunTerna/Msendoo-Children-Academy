@@ -118,17 +118,8 @@
 // // app.listen(5000, () => console.log('🚀 Server running on port 5000'));
 
 // ✅ Load environment variables intelligently
-const path = require("path");
-const dotenv = require("dotenv");
+require("dotenv").config();
 
-// Automatically detect if we’re in production or local
-const envPath =
-  process.env.NODE_ENV === "production"
-    ? undefined // In production, Railway injects environment variables automatically
-    : path.resolve(__dirname, ".env");
-
-// Load environment variables from the detected path
-dotenv.config({ path: envPath });
 
 // Check if DATABASE_URL loaded
 console.log("Loaded DATABASE_URL:", process.env.DATABASE_URL);
