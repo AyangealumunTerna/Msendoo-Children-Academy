@@ -14,32 +14,32 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET;
 
-// 🧩 Connect to MySQL
-let db;
-(async () => {
-  try {
-    const dbUrl = process.env.DATABASE_URL?.trim();
+// // 🧩 Connect to MySQL
+// let db;
+// (async () => {
+//   try {
+//     const dbUrl = process.env.DATABASE_URL?.trim();
 
-    if (!dbUrl) throw new Error("DATABASE_URL is missing or invalid");
+//     if (!dbUrl) throw new Error("DATABASE_URL is missing or invalid");
 
-    const url = new URL(dbUrl);
-    db = await mysql.createPool({
-      host: url.hostname,
-      user: url.username,
-      password: url.password,
-      database: url.pathname.replace("/", ""),
-      port: url.port || 3306,
-      waitForConnections: true,
-      connectionLimit: 10,
-      queueLimit: 0,
-    });
+//     const url = new URL(dbUrl);
+//     db = await mysql.createPool({
+//       host: url.hostname,
+//       user: url.username,
+//       password: url.password,
+//       database: url.pathname.replace("/", ""),
+//       port: url.port || 3306,
+//       waitForConnections: true,
+//       connectionLimit: 10,
+//       queueLimit: 0,
+//     });
 
-    await db.query("SELECT 1");
-    console.log("✅ Connected to MySQL database");
-  } catch (err) {
-    console.error("❌ Database connection failed:", err.message);
-  }
-})();
+//     await db.query("SELECT 1");
+//     console.log("✅ Connected to MySQL database");
+//   } catch (err) {
+//     console.error("❌ Database connection failed:", err.message);
+//   }
+// })();
 
 // 🌍 Base route
 app.get("/", (req, res) => {
